@@ -25,6 +25,14 @@ elToggleTheme.addEventListener("click", () => {
   state.dark = !state.dark;
   document.documentElement.style.setProperty("--bg", state.dark ? "#0b1220" : "#f8fafc");
   document.documentElement.style.setProperty("--text", state.dark ? "#e2e8f0" : "#0f172a");
-  elTitle.textContent = state.dark ? "Mini App – Modo Escuro" : "Mini App – GitFlow";
+  elTitle.textContent = state.dark ? "Mini App – Modo Escuro" : "Mini App – GitFlow 1.0.0";
+  elToggleTheme.setAttribute("aria-pressed", String(state.dark));
+});
+
+  // Hotfix: título correto ao voltar para o modo claro
+  elTitle.textContent = state.dark
+    ? "Mini App – Modo Escuro"
+    : "Mini App – GitFlow 1.0.0";
+
   elToggleTheme.setAttribute("aria-pressed", String(state.dark));
 });
